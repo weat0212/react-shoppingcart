@@ -1,9 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import Card from "react-bootstrap/Card";
-import styles from "./Cards.module.css";
-
 const cakes = [
   {
     link: "./images/cake1.jpg",

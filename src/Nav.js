@@ -1,6 +1,4 @@
 import React from "react";
-import Cards from "./Cards";
-import styles from "./Cards.module.css";
 
 const Nav = () => {
   return (
