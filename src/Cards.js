@@ -83,7 +83,7 @@ const MyCards = () => {
             <div>
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 onClick={(e) =>
                   inventoryReducer({
                     type: "increase",
@@ -96,7 +96,7 @@ const MyCards = () => {
               <input style={{ width: 100 }} type="text" value={0} />
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 onClick={(e) =>
                   inventoryReducer({
                     type: "decrease",
@@ -117,7 +117,7 @@ const MyCards = () => {
                   width: "100px",
                 }}
                 type="button"
-                class="btn btn-light"
+                className="btn btn-light"
               >
                 加入購物車
               </button>
