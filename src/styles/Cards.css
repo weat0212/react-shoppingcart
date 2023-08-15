@@ -1,0 +1,32 @@
+.shopbutton {
+    font-size: 14px !important;
+
+    display: block;
+    background-color: rgb(150, 126, 118);
+    border: 3px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    margin: 0;
+    padding: 0;
+   
+    width: 50%;
+    margin: 0 auto;
+   
+    margin: 0;
+    padding: 0;
+    font: 400 1.4rem "Lato", Verdana, Helvetica, sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.shopbutton:hover {
+    background-color: #ffffff;
+    color: rgb(150, 126, 118);
+}
