@@ -15,7 +15,7 @@ function App() {
             <Button variant="primary" onClick={() => setModalShow(true)}>
                 Launch vertically centered modal
             </Button>
-            <CenterModal show={modalShow} onHide={() => setModalShow(false)}/>
+            <CenterModal title={'提示訊息'} content={'已售完'} show={modalShow} onHide={() => setModalShow(false)}/>
         </>
     );
 }
