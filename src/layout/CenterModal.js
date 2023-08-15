@@ -3,7 +3,7 @@ import {Button, Modal} from "react-bootstrap";
 
 export function CenterModal(props) {
 
-    const {title, content} = props
+    const {title = '提示訊息', content = '系統忙碌中，請稍後再試...'} = props
 
     return (
         <Modal {...props} size="md" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -16,7 +16,7 @@ export function CenterModal(props) {
                 <p>{content}</p>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={props.onHide}>確認</Button>
+                <Button variant={'secondary'} onClick={props.onHide}>確認</Button>
             </Modal.Footer>
         </Modal>
     )

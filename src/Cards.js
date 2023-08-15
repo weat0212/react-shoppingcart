@@ -32,7 +32,7 @@ const cakes = [
   },
 ];
 
-const MyCards = () => {
+const MyCards = (props) => {
   const inventoryReducer = useDispatch();
   return (
     <div className="container  ">
@@ -118,6 +118,7 @@ const MyCards = () => {
                 }}
                 type="button"
                 className="btn btn-light"
+                onClick={props.onClick}
               >
                 加入購物車
               </button>
