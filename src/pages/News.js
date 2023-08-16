@@ -10,7 +10,7 @@ const News = () => {
       ></img>
       <div className="container d-flex justify-content-center p-3">
         <h2 className="text-center " style={{ color: "rgb(150, 126, 118)" }}>
-          通過蛋糕
+          透過蛋糕
           <br /> 為許多人帶來樂趣 <br />
           <br />
           <h4>ケーキを通して 多くの人に楽しさを</h4>

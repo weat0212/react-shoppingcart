@@ -5,6 +5,7 @@ import { Outlet, Link } from "react-router-dom";
 const Layout = () => {
   return (
     <>
+    {/*導覽列 */}
       <nav className="navbar navbar-expand-sm  py-0  bg-white  fixed-top">
         <div className="container-fluid ">
           <a className="navbar-brand" href="javascript:void(0)">
@@ -55,10 +56,15 @@ const Layout = () => {
                 </Link>
               </li>
             </ul>
+            
           </div>
         </div>
+        
       </nav>
+      {/* footer */}
+     
       <Outlet />
+      
     </>
   );
 };

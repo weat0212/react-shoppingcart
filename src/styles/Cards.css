@@ -1,6 +1,6 @@
 .shopbutton {
-    font-size: 14px !important;
-
+    font-size: 13px !important;
+    text-align: center !important;
     display: block;
     background-color: rgb(150, 126, 118);
     border: 3px solid transparent;
@@ -11,22 +11,61 @@
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-
-    margin: 0;
-    padding: 0;
-   
-    width: 50%;
-    margin: 0 auto;
-   
-    margin: 0;
-    padding: 0;
-    font: 400 1.4rem "Lato", Verdana, Helvetica, sans-serif;
+    width: 40%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 .shopbutton:hover {
     background-color: #ffffff;
     color: rgb(150, 126, 118);
+}
+/*登入畫面css*/
+.login {
+    width: 600px;
+    height: 400px;
+    background-color: FFB9B9;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.center {
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.inner {
+    display: flex;
+    /* 水平置中 */
+    justify-content: center;
+    /* 垂直置中 */
+    align-content: center;
+    flex-wrap: wrap;
+}
+.loginbutton {
+    font-weight: bold !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    display: block;
+    background-color: rgb(150, 126, 118);
+    border: 3px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.loginbutton:hover {
+    background-color: #eadbc8;
+    color: rgb(150, 126, 118);
+    color: white;
 }
