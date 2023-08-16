@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import {CenterModal} from "./layout/CenterModal";
 
 const cakes = [
   {
@@ -32,21 +33,23 @@ const cakes = [
   },
 ];
 
-const MyCards = (props) => {
+const MyCards = () => {
   const inventoryReducer = useDispatch();
+  const [modalShow, setModalShow] = React.useState(false);
+  const [selected, setSelected] = React.useState();
   return (
-    <div className="container  ">
-      <div className="row ">
+    <div className="container">
+      <div className="row">
         {cakes.map((item, index) => (
           <div
             key={index}
-            className="card  p-2 mb-3 container"
+            className="card p-2 mb-3 container"
             style={{ width: "17rem", height: "" }}
           >
-            <img className="card-img-top    " src={item.link} alt="" />{" "}
+            <img className="card-img-top" src={item.link} alt="" />{" "}
             {/* 從CAKES引入的圖片 */}
             {/* 商品名稱 */}
-            <div className="card-body mt-3 p-1   ">
+            <div className="card-body mt-3 p-1">
               <div
                 style={{
                   fontSize: 17,
@@ -54,7 +57,7 @@ const MyCards = (props) => {
                   fontWeight: "bold",
                   textAlign: "center",
                 }}
-                className=" m-1 card-title container "
+                className="m-1 card-title container"
               >
                 {item.name}
               </div>
@@ -108,7 +111,7 @@ const MyCards = (props) => {
               </button>
             </div>
             {/* 按鈕 */}
-            <div className="container d-flex justify-content-center ">
+            <div className="container d-flex justify-content-center">
               <button
                 style={{
                   backgroundColor: "rgb(150, 126, 118)",
@@ -118,7 +121,7 @@ const MyCards = (props) => {
                 }}
                 type="button"
                 className="btn btn-light"
-                onClick={props.onClick}
+                onClick={() => handleAddCart(item.name)}
               >
                 加入購物車
               </button>
@@ -126,8 +129,14 @@ const MyCards = (props) => {
           </div>
         ))}
       </div>
+      <CenterModal show={modalShow} onHide={() => setModalShow(false)} content={`已將「${selected}」加入購物車！`}/>
     </div>
   );
+
+  function handleAddCart(itemName) {
+    setModalShow(true);
+    setSelected(itemName);
+  }
 };
 
 export default MyCards;
