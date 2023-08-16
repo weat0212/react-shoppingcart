@@ -5,18 +5,18 @@ import { Outlet, Link } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-    {/*導覽列 */}
-      <nav className="navbar navbar-expand-sm  py-0  bg-white  fixed-top">
-        <div className="container-fluid ">
+      {/*導覽列 */}
+      <nav className="navbar navbar-expand-sm  py-0   bg-white  fixed-top">
+        <div className="container-fluid  ">
           <a className="navbar-brand" href="javascript:void(0)">
             <img
               className="container "
               style={{
-                width: 80,
+                width: 110,
                 display: "flex",
                 alignItems: "center",
               }}
-              src="https://www.shinehouse.com.tw/cdn/shop/collections/image-930904.jpg?v=1681895292"
+              src="images/shop1.png"
               alt=""
             />
           </a>
@@ -26,45 +26,41 @@ const Layout = () => {
             data-bs-toggle="collapse"
             data-bs-target="#mynavbar"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
+          <div className="collapse navbar-collapse">
+            <ul className="navbar-nav me-auto">
+              <li className="nav-item">
                 <Link to="/" class="nav-link">
-                  首頁
+                  Home
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/Cards" class="nav-link">
-                  商品介紹
+                  Cake
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/News" class="nav-link">
-                  關於我們
+                  About
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/Login" class="nav-link">
-                  會員登入
+                  Login
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/Shop" class="bnt nav-link">
-                  購物車
+                  Shop
                 </Link>
               </li>
             </ul>
-            
           </div>
         </div>
-        
       </nav>
-      {/* footer */}
-     
+
       <Outlet />
-      
     </>
   );
 };

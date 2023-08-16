@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import "../styles/Cards.css";
+import Footer from "../component/footer";
 
 const cakes = [
   {
@@ -176,6 +177,7 @@ const MyCards = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 };

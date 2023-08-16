@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "../component/footer";
+import "../styles/Cards.css";
 
 const News = () => {
   return (
@@ -38,6 +40,8 @@ const News = () => {
           無論是生日，慶祝日還是普通的日子，分享您感受到的快樂， 因為它很好吃。
         </p>
       </div>
+
+      <Footer />
     </div>
   );
 };
