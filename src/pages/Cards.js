@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import "../styles/Cards.css";
 import Footer from "../component/footer";
+import {CenterModal} from "../layout/CenterModal";
 
 const cakes = [
   {
@@ -64,6 +65,8 @@ const cakes = [
 
 const MyCards = () => {
   const inventoryReducer = useDispatch();
+  const [modalShow, setModalShow] = React.useState(false);
+  const [selected, setSelected] = React.useState();
   return (
     <>
       <img src="images/mv.jpg" className="w-100 mt-5"></img>
@@ -169,7 +172,7 @@ const MyCards = () => {
               </div>
               {/* 按鈕 */}
               <div className="container d-flex justify-content-center p-2 ">
-                <button className="shopbutton" type="button">
+                <button className="shopbutton" type="button" onClick={() => handleAddCart(item.name)}>
                   加入購物車
                 </button>
               </div>
@@ -177,9 +180,15 @@ const MyCards = () => {
           ))}
         </div>
       </div>
+      <CenterModal show={modalShow} onHide={() => setModalShow(false)} content={`已將「${selected}」加入購物車！`}/>
       <Footer />
     </>
   );
+
+  function handleAddCart(itemName) {
+    setModalShow(true);
+    setSelected(itemName);
+  }
 };
 
 export default MyCards;
