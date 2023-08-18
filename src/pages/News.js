@@ -4,23 +4,32 @@ import "../styles/Cards.css";
 
 const News = () => {
   return (
-    <div className="">
+    <>
       <img
-        src="images/Beginner.gif"
-        className="w-100"
-        style={{ height: "50" }}
+        src="images/freeg-97.jpg"
+        className="w-100 mt-0"
+        id="images143"
       ></img>
+      <div className="text3">
+        ケーキを通して 多くの人に楽しさを
+        <br />
+        透過精心製作的蛋糕，為眾多人帶來無盡的愉悅與喜悅。
+      </div>
       <div className="container d-flex justify-content-center p-3">
-        <h2 className="text-center " style={{ color: "rgb(150, 126, 118)" }}>
-          透過蛋糕
-          <br /> 為許多人帶來樂趣 <br />
-          <br />
+        <h2
+          className="text-center "
+          style={{ color: "rgb(150, 126, 118)" }}
+          id="textkeyframes"
+        >
           <h4>ケーキを通して 多くの人に楽しさを</h4>
         </h2>
       </div>
-      <div className="container d-flex justify-content-center">
-        <p className="text-center " style={{ color: "rgb(150, 126, 118)" }}>
-          透過蛋糕為 許多人帶來樂趣，連接人們的蛋糕。
+      <div
+        className="container d-flex justify-content-center"
+        id="textkeyframes"
+      >
+        <p className="text-center ">
+          連接人們的蛋糕
           <br />
           <br />
           我們一邊製作蛋糕，一邊想著靠近蛋糕帶回家的“超越”，
@@ -42,7 +51,7 @@ const News = () => {
       </div>
 
       <Footer />
-    </div>
+    </>
   );
 };
 

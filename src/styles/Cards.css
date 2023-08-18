@@ -1,3 +1,81 @@
+.content-wrapper {
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 30px;
+    align-items: center;
+    padding-left: 40px;
+}
+.grid-container1 {
+    display: flex;
+    flex-direction: row-reverse; /* 图片在右，文本在左 */
+    align-items: center;
+    gap: 30px;
+    text-align: right;
+    margin-right: 60px; /* 根据需要调整图片和文本的间距 */
+    padding-top: 30px;
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*home首頁字體*/
+.text3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    text-shadow: 1px 2px 3px rgba(11, 10, 10, 0.847);
+    padding: 10px 20px;
+}
+#images143 {
+    opacity: 0; /* 初始状态设置为透明 */
+    animation: fadeInAndStayVisible 2s ease-in-out forwards;
+}
+
+@keyframes fadeInAndStayVisible {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.images84774 {
+    width: 600px;
+    height: 400px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.hometext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* 設定高度或者根據需要的高度 */
+    background-color: #f8f8f8;
+    position: absolute;
+    top: 100%; /* 文字的上邊緣置於圖片中央 */
+    left: 70%; /* 文字的左邊緣置於圖片中央 */
+    transform: translate(-50%, -50%); /* 將文字中心對齊圖片中心 */
+    background-color: rgba(255, 255, 255, 0.9); /* 設定背景顏色，可以根據需要調整 */
+    padding: 20px; /* 設定內邊距，可以根據需要調整 */
+}
+/*加入購物車的button*/
 .shopbutton {
     font-size: 13px !important;
     text-align: center !important;
@@ -200,4 +278,25 @@
     }
 }
 
+#textkeyframes {
+    color: rgb(150, 126, 118);
+    opacity: 0; /* 初始設置文字透明度為0 */
+    white-space: nowrap; /* 防止文字自動換行 */
+    overflow: hidden; /* 隱藏超出的部分 */
+    animation: slide-in 3s ease-out forwards; /* 使用名為slide-in的動畫，持續2秒，淡出緩和，保留最後狀態 */
+}
+@keyframes slide-in {
+    from {
+        transform: translateY(100%); /* 初始位置在下方，完全隱藏 */
+        opacity: 0; /* 初始透明度為0 */
+    }
+    to {
+        transform: translateY(0); /* 最終位置在上方，完全顯示 */
+        opacity: 1; /* 最終透明度為1 */
+    }
+}
 
+#extkeyframes {
+    width: 50%; /* 文字寬度佔一半，可以根據需要調整 */
+    padding: 20px;
+}

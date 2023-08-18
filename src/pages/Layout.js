@@ -2,9 +2,11 @@ import React from "react";
 import "../styles/Nav.css";
 import { Outlet, Link } from "react-router-dom";
 
+
 const Layout = () => {
   return (
     <>
+      
       {/*導覽列 */}
       <nav className="navbar navbar-expand-sm  py-0   bg-white  fixed-top">
         <div className="container-fluid  ">
@@ -32,27 +34,27 @@ const Layout = () => {
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
                 <Link to="/" class="nav-link">
-                  Home
+                  首頁
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/Cards" class="nav-link">
-                  Cake
+                  商品介紹
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/News" class="nav-link">
-                  About
+                  關於我們
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/Login" class="nav-link">
-                  Login
+                  會員登入
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/Shop" class="bnt nav-link">
-                  Shop
+                  購物車
                 </Link>
               </li>
             </ul>
