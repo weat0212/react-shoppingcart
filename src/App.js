@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from "react-bootstrap";
 import Cards from "./pages/Cards";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
