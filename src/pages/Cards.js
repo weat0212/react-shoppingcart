@@ -171,11 +171,6 @@ const MyCards = () => {
       <Footer />
     </>
   );
-
-  function handleAddCart(itemName) {
-    setModalShow(true);
-    setSelected(itemName);
-  }
 };
 
 export default MyCards;
