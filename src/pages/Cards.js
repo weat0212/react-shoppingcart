@@ -4,8 +4,8 @@ import Footer from "../component/footer";
 import {CenterModal} from "../layout/CenterModal";
 import mockCakes from "../model/mock/Cakes"
 
-const MyCards = () => {
-
+const MyCards = (props) => {
+  const { cart, setCart } = props;
   // 商品
   const [cakes, setCakes] = useState(mockCakes);
   useEffect(() => {
@@ -14,8 +14,7 @@ const MyCards = () => {
     }));
   }, []);
 
-  // 購物車
-  const [cart, setCart] = useState([]);
+  
 
   // 彈跳視窗
   const [modalConfig, setModalConfig] = React.useState({show: false, content: ""});
