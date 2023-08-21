@@ -10,6 +10,9 @@ const News = () => {
         className="w-100 mt-0"
         id="images143"
       ></img>
+      <div className="container d-flex justify-content-center p-3">
+        <h3>關於我們</h3>
+      </div>
       <div className="text3">
         ケーキを通して 多くの人に楽しさを
         <br />
@@ -49,7 +52,7 @@ const News = () => {
           無論是生日，慶祝日還是普通的日子，分享您感受到的快樂， 因為它很好吃。
         </p>
       </div>
-
+      <img src="images/6452.jpeg" className=" container d-flex justify-content-center mb-4" id="images143" style={{ width: "600px", height: "350px", }}></img>
       <Footer />
     </>
   );

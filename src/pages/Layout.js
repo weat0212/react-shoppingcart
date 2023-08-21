@@ -2,11 +2,9 @@ import React from "react";
 import "../styles/Nav.css";
 import { Outlet, Link } from "react-router-dom";
 
-
 const Layout = () => {
   return (
     <>
-      
       {/*導覽列 */}
       <nav className="navbar navbar-expand-sm  py-0   bg-white  fixed-top">
         <div className="container-fluid  ">
@@ -53,7 +51,7 @@ const Layout = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/Shop" class="bnt nav-link">
+                <Link to="/Cart" class="bnt nav-link">
                   購物車
                 </Link>
               </li>
