@@ -18,11 +18,10 @@ const MyCards = () => {
   const [cart, setCart] = useState([]);
 
   // 彈跳視窗
-  const [modalShow, setModalShow] = React.useState(false);
-  const [selected, setSelected] = React.useState();
+  const [modalConfig, setModalConfig] = React.useState({show: false, content: ""});
 
-  function showDialog() {
-    setModalShow(true);
+  function showDialog(product) {
+    setModalConfig({show: true, content: `已將「${product?.name}」加入購物車！`});
   }
 
   function handleQuantityChange(e, index) {
@@ -50,8 +49,7 @@ const MyCards = () => {
   }
 
   function handleAddCart(product) {
-    showDialog();
-    setSelected(product);
+    showDialog(product);
 
     let found = cart.find(c => c.name === product.name);
     if (found) {
@@ -167,7 +165,9 @@ const MyCards = () => {
           ))}
         </div>
       </div>
-      <CenterModal show={modalShow} onHide={() => setModalShow(false)} content={`已將「${selected?.name}」加入購物車！`}/>
+      <CenterModal show={modalConfig.show} onHide={() => setModalConfig(prevState => {
+        return {...prevState, show: false}
+      })} content={modalConfig?.content}/>
       <Footer />
     </>
   );
