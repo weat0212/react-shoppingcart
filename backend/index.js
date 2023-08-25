@@ -1,5 +1,6 @@
 const express = require('express')
-const app = express()
+const cors = require('cors');
+const app = express().use(cors());
 const port = 3005
 
 app.post('/login', (req, res) => {
