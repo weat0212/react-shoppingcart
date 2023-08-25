@@ -3,19 +3,29 @@ import "../styles/Cards.css";
 import Footer from "../component/footer";
 import axios from "../service/axios";
 
-const Login = () => {
+const Login = ({setLoginStatus: setLoginStatus}) => {
 
-  let POST = async () => {
+  let POST = (e) => {
+    e.preventDefault();
+
     try {
-      const resp = await axios.post("/login");
-      console.log(resp);
+      axios.post("/login").then(resp => {
 
-      if (resp?.data.success) {
-        alert("登入成功" + resp?.data.user.name + "\n" + new Date(resp?.data.loginTime));
-      }
+        if (resp?.data.success) {
+          alert("登入成功" + resp?.data.user.name + "\n" + new Date(resp?.data.loginTime));
+          let user = resp.data.user;
+          console.log("[使用者資訊]:", user);
+          setLoginStatus(user);
+        } else {
+          alert("登入失敗！")
+        }
+      }, err => {
+        console.log("錯誤：", err);
+        alert("系統忙碌中，請稍後再試！")
+      });
     } catch (error) {
       console.log("錯誤：", error);
-      alert("登入失敗")
+      alert("系統忙碌中，請稍後再試！")
     }
   };
 

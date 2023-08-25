@@ -2,7 +2,14 @@ import React from "react";
 import "../styles/Nav.css";
 import { Outlet, Link } from "react-router-dom";
 
-const Layout = () => {
+const Layout = ({loginStatus, setLoginStatus}) => {
+
+  console.log("[登入狀態]：", loginStatus);
+
+  function handleLogout() {
+    setLoginStatus(undefined);
+  }
+
   return (
     <>
       {/*導覽列 */}
@@ -45,16 +52,32 @@ const Layout = () => {
                   關於我們
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/Login" class="nav-link">
-                  會員登入
-                </Link>
-              </li>
+
               <li className="nav-item">
                 <Link to="/Cart" class="bnt nav-link">
                   購物車
                 </Link>
               </li>
+
+              {!loginStatus &&
+                  <li className="nav-item">
+                    <Link to="/Login" class="nav-link">
+                      會員登入
+                    </Link>
+                  </li>}
+              {loginStatus &&
+                <>
+                  <li className="nav-item">
+                    <div className={"nav-link"}>
+                      Hi, {loginStatus.name}
+                    </div>
+                  </li>
+                  <li className="nav-item">
+                    <a className={"nav-link"} onClick={handleLogout} href={"#"}>
+                      登出
+                    </a>
+                  </li>
+                </>}
             </ul>
           </div>
         </div>
