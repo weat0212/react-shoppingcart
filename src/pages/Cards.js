@@ -106,7 +106,7 @@ const MyCards = (props) => {
                   }}
                   className="text container"
                 >
-                  {item?.price}
+                  NT${item?.price}
                 </div>
 
                 {/* 描述 */}
