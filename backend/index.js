@@ -8,6 +8,11 @@ app.post('/login', (req, res) => {
         { success: true, user: {name: "Jessie"}, loginTime: new Date()})
 })
 
+app.post('/fail', (req, res) => {
+    res.json(
+        { success: false, loginTime: new Date()})
+})
+
 app.listen(port, () => {
     console.log(`Shopping cart backend server listening on port ${port}`)
 })

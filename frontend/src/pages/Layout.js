@@ -1,13 +1,21 @@
 import React from "react";
 import "../styles/Nav.css";
 import { Outlet, Link } from "react-router-dom";
+import {CenterModal} from "../layout/CenterModal";
 
 const Layout = ({loginStatus, setLoginStatus}) => {
+  // 彈跳視窗
+  const [modalConfig, setModalConfig] = React.useState({show: false, content: ""});
 
   console.log("[登入狀態]：", loginStatus);
 
   function handleLogout() {
     setLoginStatus(undefined);
+    showDialog("您已成功登出！")
+  }
+
+  function showDialog(message) {
+    setModalConfig({show: true, content: message});
   }
 
   return (
@@ -82,7 +90,11 @@ const Layout = ({loginStatus, setLoginStatus}) => {
           </div>
         </div>
       </nav>
-
+      <CenterModal show={modalConfig.show} onHide={() => setModalConfig(prevState => {
+        return {...prevState, show: false}
+      })}>
+        <div>{modalConfig.content}</div>
+      </CenterModal>
       <Outlet />
     </>
   );

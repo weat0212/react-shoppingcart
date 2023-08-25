@@ -2,8 +2,18 @@ import React from "react";
 import "../styles/Cards.css";
 import Footer from "../component/footer";
 import axios from "../service/axios";
+import {CenterModal} from "../layout/CenterModal";
 
 const Login = ({setLoginStatus: setLoginStatus}) => {
+
+  // 彈跳視窗
+  const [modalConfig, setModalConfig] = React.useState({show: false, content: ""});
+
+  function showDialog(resp) {
+    let login = resp?.success;
+    let content = login ? `登入成功！${resp.user.name}` : `帳號密碼錯誤！請重新再試`
+    setModalConfig({show: true, content: content});
+  }
 
   let POST = (e) => {
     e.preventDefault();
@@ -12,12 +22,12 @@ const Login = ({setLoginStatus: setLoginStatus}) => {
       axios.post("/login").then(resp => {
 
         if (resp?.data.success) {
-          alert("登入成功" + resp?.data.user.name + "\n" + new Date(resp?.data.loginTime));
+          showDialog(resp?.data);
           let user = resp.data.user;
           console.log("[使用者資訊]:", user);
           setLoginStatus(user);
         } else {
-          alert("登入失敗！")
+          showDialog(resp?.data);
         }
       }, err => {
         console.log("錯誤：", err);
@@ -73,6 +83,11 @@ const Login = ({setLoginStatus: setLoginStatus}) => {
           </button>
         </form>
       </div>
+      <CenterModal show={modalConfig.show} onHide={() => setModalConfig(prevState => {
+        return {...prevState, show: false}
+      })}>
+        <div>{modalConfig.content}</div>
+      </CenterModal>
       <Footer />
     </div>
   );
