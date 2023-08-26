@@ -93,7 +93,7 @@ button::-moz-focus-inner {
 .nav-container {
     position: fixed;
     right: 0;
-    top: 5vw;
+    top: 10vw;
     background: rgb(150, 126, 118);
     height: 50%;
     width: 150px;

@@ -1,4 +1,4 @@
-import "../styles/CartSelect.css";
+import "../styles/CartSideBar.css";
 import React from "react";
 
 

@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout loginStatus={loginStatus} setLoginStatus={setLoginStatus}/>}>
+          <Route path="/" element={<Layout cart={cart} loginStatus={loginStatus} setLoginStatus={setLoginStatus}/>}>
             <Route index element={<Home />} />
             <Route path="cards" element={<Cards cart={cart} setCart={setCart} />} />
             <Route path="News" element={<News />} />
