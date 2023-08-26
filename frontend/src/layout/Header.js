@@ -67,14 +67,14 @@ const Header = ({loginStatus, setLoginStatus, navVisible, setNavVisible}) => {
                   購物車
                 </Link>
               </li>
+            </ul>
 
-              {!loginStatus &&
-                  <li className="nav-item">
-                    <Link to="/Login" class="nav-link">
-                      會員登入
-                    </Link>
-                  </li>}
-              {loginStatus &&
+            <ul className={"navbar-nav"} id="shoppingcartbtn">
+              <li className="nav-link">
+                <ShopCartIcon navVisible={navVisible} setNavVisible={setNavVisible}/>
+              </li>
+
+              {loginStatus ?
                 <>
                   <li className="nav-item">
                     <div className={"nav-link"}>
@@ -86,15 +86,12 @@ const Header = ({loginStatus, setLoginStatus, navVisible, setNavVisible}) => {
                       登出
                     </a>
                   </li>
-                </>}
-            </ul>
-
-            <ul className={"navbar-nav"} id="shoppingcartbtn">
-              <li className="">
-                <div className="nav-link">
-                  <ShopCartIcon navVisible={navVisible} setNavVisible={setNavVisible}/>
-                </div>
-              </li>
+                </> :
+                <li className="nav-item">
+                  <Link to="/Login" class="nav-link">
+                    會員登入
+                  </Link>
+                </li>}
             </ul>
           </div>
         </div>
