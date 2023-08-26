@@ -1,36 +1,14 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import "../styles/Cards.css";
-import Footer from "../component/footer";
+import Footer from "../layout/Footer";
 import { useState, useEffect } from "react";
 
-const card = [
-  {
-    name: "苺のケーキ",
-    description:
-      "草莓和鮮奶油夾在海綿上，裝飾著草莓、柑橘類水果和獼猴桃等五顏六色的水果。",
-  },
-  {
-    name: "苺のケーキ",
-    price: "NT$300",
-    description:
-      "草莓和鮮奶油夾在海綿上，裝飾著草莓、柑橘類水果和獼猴桃等五顏六色的水果。",
-  },
-  {
-    name: "苺のケーキ",
-    price: "NT$300",
-    description:
-      "草莓和鮮奶油夾在海綿上，裝飾著草莓、柑橘類水果和獼猴桃等五顏六色的水果。",
-  },
-];
-
 const Home = () => {
-  const location = useLocation();
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -201,8 +179,6 @@ const Home = () => {
           </Card>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

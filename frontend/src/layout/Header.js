@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/Nav.css";
 import { Outlet, Link } from "react-router-dom";
-import {CenterModal} from "../layout/CenterModal";
+import {CenterModal} from "./CenterModal";
 
-const Layout = ({loginStatus, setLoginStatus}) => {
+const Header = ({loginStatus, setLoginStatus}) => {
   // 彈跳視窗
   const [modalConfig, setModalConfig] = React.useState({show: false, content: ""});
 
@@ -100,4 +100,4 @@ const Layout = ({loginStatus, setLoginStatus}) => {
   );
 };
 
-export default Layout;
+export default Header;

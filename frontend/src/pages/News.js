@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../component/footer";
+import Footer from "../layout/Footer";
 import "../styles/Cards.css";
 
 const News = () => {
@@ -53,7 +53,6 @@ const News = () => {
         </p>
       </div>
       <img src="images/6452.jpeg" className=" container d-flex justify-content-center mb-4" id="images143" style={{ width: "600px", height: "350px", }}></img>
-      <Footer />
     </>
   );
 };

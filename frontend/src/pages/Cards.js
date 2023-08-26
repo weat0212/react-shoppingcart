@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "../styles/Cards.css";
-import Footer from "../component/footer";
+import Footer from "../layout/Footer";
 import {CenterModal} from "../layout/CenterModal";
 import mockCakes from "../model/mock/Cakes"
 
@@ -167,7 +167,6 @@ const MyCards = (props) => {
       <CenterModal show={modalConfig.show} onHide={() => setModalConfig(prevState => {
         return {...prevState, show: false}
       })} content={modalConfig?.content}/>
-      <Footer />
     </>
   );
 };

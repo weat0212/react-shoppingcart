@@ -24,15 +24,15 @@ const Footer = () => {
 
           <ul class="nav__ul">
             <li>
-              <a href="#">購物須知</a>
+              <a href="frontend/src/layout/footer#Footer.js">購物須知</a>
             </li>
 
             <li>
-              <a href="#">售後服務</a>
+              <a href="frontend/src/layout/footer#Footer.js">售後服務</a>
             </li>
 
             <li>
-              <a href="#">V I P 會員制度</a>
+              <a href="frontend/src/layout/footer#Footer.js">V I P 會員制度</a>
             </li>
           </ul>
         </li>
@@ -42,11 +42,11 @@ const Footer = () => {
 
           <ul class="nav__ul nav__ul--extra">
             <li>
-              <a href="#">Instagram</a>
+              <a href="frontend/src/layout/footer#Footer.js">Instagram</a>
             </li>
 
             <li>
-              <a href="#">@syuan</a>
+              <a href="frontend/src/layout/footer#Footer.js">@syuan</a>
             </li>
 
             
@@ -58,15 +58,15 @@ const Footer = () => {
 
           <ul class="nav__ul">
             <li>
-              <a href="#">條款與細則</a>
+              <a href="frontend/src/layout/footer#Footer.js">條款與細則</a>
             </li>
 
             <li>
-              <a href="#">隱私政策</a>
+              <a href="frontend/src/layout/footer#Footer.js">隱私政策</a>
             </li>
 
             <li>
-              <a href="#">售後服務</a>
+              <a href="frontend/src/layout/footer#Footer.js">售後服務</a>
             </li>
           </ul>
         </li>

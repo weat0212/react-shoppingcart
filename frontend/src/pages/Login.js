@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Cards.css";
-import Footer from "../component/footer";
+import Footer from "../layout/Footer";
 import axios from "../service/axios";
 import {CenterModal} from "../layout/CenterModal";
 
@@ -88,7 +88,6 @@ const Login = ({setLoginStatus: setLoginStatus}) => {
       })}>
         <div>{modalConfig.content}</div>
       </CenterModal>
-      <Footer />
     </div>
   );
 };
