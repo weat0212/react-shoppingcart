@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import "../styles/Cards.css";
-import Footer from "../layout/Footer";
 import {CenterModal} from "../layout/CenterModal";
-import mockCakes from "../model/mock/Cakes"
+import mockCakes from "../model/mock/Cakes";
+
 
 const MyCards = (props) => {
   const { cart, setCart } = props;

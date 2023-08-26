@@ -2,8 +2,9 @@ import React from "react";
 import "../styles/Nav.css";
 import { Outlet, Link } from "react-router-dom";
 import {CenterModal} from "./CenterModal";
+import ShopCartIcon from "./ShopCartIcon";
 
-const Header = ({loginStatus, setLoginStatus}) => {
+const Header = ({loginStatus, setLoginStatus, navVisible, setNavVisible}) => {
   // 彈跳視窗
   const [modalConfig, setModalConfig] = React.useState({show: false, content: ""});
 
@@ -86,6 +87,14 @@ const Header = ({loginStatus, setLoginStatus}) => {
                     </a>
                   </li>
                 </>}
+            </ul>
+
+            <ul className={"navbar-nav"} id="shoppingcartbtn">
+              <li className="">
+                <div className="nav-link">
+                  <ShopCartIcon navVisible={navVisible} setNavVisible={setNavVisible}/>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
