@@ -19,7 +19,7 @@ const MyCards = (props) => {
   const [modalConfig, setModalConfig] = React.useState({show: false, content: ""});
 
   function showDialog(product) {
-    setModalConfig({show: true, content: `已將「${product?.name}」加入購物車！`});
+    setModalConfig({show: true, content: `已將「${product?.name}」加入購物車！`, img: product?.link});
   }
 
   function handleAddCart(product) {
@@ -141,7 +141,7 @@ const MyCards = (props) => {
       </div>
       <CenterModal show={modalConfig.show} onHide={() => setModalConfig(prevState => {
         return {...prevState, show: false}
-      })} content={modalConfig?.content}/>
+      })} title={'加入購物車'} content={modalConfig?.content} img={modalConfig?.img}/>
     </>
   );
 };
