@@ -17,10 +17,10 @@
 ## 購物網站呈現
 
 ### 首頁
-![image](https://github.com/weat0212/react-shoppingcart/blob/frontend/public/screenshot/home_screenshot.png)
+![image](https://github.com/weat0212/react-shoppingcart/blob/main/frontend/public/screenshot/home_screenshot.png)
 
 ### 登入頁
-![image](https://github.com/weat0212/react-shoppingcart/blob/frontend/public/screenshot/login_screenshot.png)
+![image](https://github.com/weat0212/react-shoppingcart/blob/main/frontend/public/screenshot/login_screenshot.png)
 
 ### 商品頁
-![image](https://github.com/weat0212/react-shoppingcart/blob/frontend/public/screenshot/cakes_screenshot.png)
+![image](https://github.com/weat0212/react-shoppingcart/blob/main/frontend/public/screenshot/cakes_screenshot.png)
