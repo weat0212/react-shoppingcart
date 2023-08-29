@@ -2,15 +2,17 @@ function cartReducer(cakes, action) {
 
     console.log(cakes, action);
 
-    switch (action.type) {
+    const {type, quantity, index} = action;
+
+    switch (type) {
         case "setQuantity":
             return cakes.map(cake => {
-                return {...cake, quantity: action.quantity};
+                return {...cake, quantity};
             });
         case "increase":
             return cakes.map((cake, i) => {
-                if (i === action.index) {
-                    cake.quantity += action.quantity;
+                if (i === index) {
+                    cake.quantity += quantity;
                     return cake;
                 } else {
                     return cake;
@@ -18,8 +20,8 @@ function cartReducer(cakes, action) {
             });
         case "decrease":
             return cakes.map((cake, i) => {
-                if (i === action.index) {
-                    cake.quantity -= action.quantity;
+                if (i === index) {
+                    cake.quantity -= quantity;
                     if (cake.quantity < 0) cake.quantity = 0;
                     return cake;
                 } else {
@@ -28,13 +30,15 @@ function cartReducer(cakes, action) {
             });
         case "change":
             return cakes.map((cake, i) => {
-                if (i === action.index) {
-                    cake.quantity = Number(action.quantity);
+                if (i === index) {
+                    cake.quantity = Number(quantity);
                     return cake;
                 } else {
                     return cake;
                 }
             });
+        default:
+            throw new Error(`Unknown action: ${type}`)
     }
 }
 
