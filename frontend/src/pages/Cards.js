@@ -1,50 +1,25 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useReducer} from "react";
 import "../styles/Cards.css";
 import {CenterModal} from "../layout/CenterModal";
 import mockCakes from "../model/mock/Cakes";
-
+import reducer from "../model/cartReducer"
 
 const MyCards = (props) => {
-  const { cart, setCart } = props;
-  // 商品
-  const [cakes, setCakes] = useState(mockCakes);
-  useEffect(() => {
-    setCakes(cakes.map(cake => {
-      return {...cake, quantity: 0};
-    }));
-  }, []);
 
-  
+  // 購物車
+  const { cart, setCart } = props;
+
+  // 商品
+  const [cakes, dispatch] = useReducer(reducer, mockCakes);
+  useEffect(() => {
+    dispatch({type: "setQuantity", quantity: 0});
+  }, []);
 
   // 彈跳視窗
   const [modalConfig, setModalConfig] = React.useState({show: false, content: ""});
 
   function showDialog(product) {
     setModalConfig({show: true, content: `已將「${product?.name}」加入購物車！`});
-  }
-
-  function handleQuantityChange(e, index) {
-    setCakes(prev => prev.map((cake, i) => {
-      if (i === index) {
-        cake.quantity = Number(e.target.value);
-        return cake;
-      } else {
-        return cake;
-      }
-    }));
-  }
-
-  function handleOnClick(e, index, change) {
-    e.preventDefault();
-    setCakes(prev => prev.map((cake, i) => {
-      if (i === index) {
-        cake.quantity += change;
-        if (cake.quantity < 0) cake.quantity = 0;
-        return cake;
-      } else {
-        return cake;
-      }
-    }));
   }
 
   function handleAddCart(product) {
@@ -128,7 +103,7 @@ const MyCards = (props) => {
                     height: "30px",
                   }}
                   type="button"
-                  onClick={e => handleOnClick(e, index, 1)}
+                  onClick={event => dispatch({type: "increase", quantity: 1, index})}
                 >+</button>
                 <input
                   className="text-center "
@@ -140,7 +115,7 @@ const MyCards = (props) => {
                   }}
                   type="text"
                   value={item?.quantity}
-                  onChange={e => handleQuantityChange(e, index)}
+                  onChange={event => dispatch({type: "change", quantity: event.target.value, index})}
                 />
                 <button
                   style={{
@@ -151,7 +126,7 @@ const MyCards = (props) => {
                     height: "30px",
                   }}
                   type="button"
-                  onClick={e => handleOnClick(e, index, -1)}
+                  onClick={event => dispatch({type: "decrease", quantity: 1, index})}
                 >-</button>
               </div>
               {/* 按鈕 */}
