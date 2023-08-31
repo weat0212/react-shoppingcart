@@ -2,8 +2,12 @@ import Header from "./Header";
 import Footer from "./Footer";
 import CartSideBar from "./CartSideBar";
 import {useState} from "react";
+import {useCart} from "../model/provider/CartProvider";
 
-const Layout = ({loginStatus, setLoginStatus, children, cart}) => {
+const Layout = ({loginStatus, setLoginStatus, children}) => {
+
+    const {cart} = useCart();
+
     const [navVisible, setNavVisible] = useState(false);
     console.log(cart)
     return (

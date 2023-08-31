@@ -1,9 +1,9 @@
 import React from "react";
+import {useCart} from "../model/provider/CartProvider";
 
-const Cart = (props) => {
-  const { cart } = props;
-
-    console.log("[購物車]：", cart)
+const Cart = () => {
+  const {cart} = useCart();
+  console.log("[購物車]：", cart)
 
   function calculateTotal() {
     let total = 0;

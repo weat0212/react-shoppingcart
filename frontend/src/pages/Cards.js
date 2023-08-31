@@ -2,12 +2,13 @@ import React, {useEffect, useReducer} from "react";
 import "../styles/Cards.css";
 import {CenterModal} from "../layout/CenterModal";
 import mockCakes from "../model/mock/Cakes";
-import reducer from "../model/cartReducer"
+import reducer from "../model/reducer/cartReducer"
+import {useCart} from "../model/provider/CartProvider";
 
-const MyCards = (props) => {
+const MyCards = () => {
 
   // 購物車
-  const { cart, setCart } = props;
+  const { cart, setCart } = useCart();
 
   // 商品
   const [cakes, dispatch] = useReducer(reducer, mockCakes);
