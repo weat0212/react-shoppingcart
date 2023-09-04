@@ -22,7 +22,7 @@ function App() {
             <Route path="cards" element={<Cards cart={cart} setCart={setCart} />} />
             <Route path="News" element={<News />} />
             <Route path="Login" element={<Login setLoginStatus={setLoginStatus} />} />
-            <Route path="Cart" element={<Cart cart={cart} />} />
+            <Route path="Cart" element={<Cart cart={cart} setCart={setCart} />} />
           </Route>
         </Routes>
       </BrowserRouter>
