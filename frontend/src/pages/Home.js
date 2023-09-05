@@ -47,15 +47,17 @@ const Home = () => {
           </h5>
         </div>
         <div class="content-wrapper">
+          
           <div class="grid-container">
             <div class="image-container">
               <img src="images/84774.jpeg" class="images84774" />
             </div>
             <div class="text-content">
+            <img className="p-3" src="https://j-croissant.jp/wp/wp-content/themes/j-croissant/assets/img/quality/quality_1.svg" alt="" />
               <p className="container">
-                選用日本上白糖，搭配NIPPN鑽石低筋麵粉，烘焙出獨特的日式風味，
+              混合了來自北海道和長野縣的三種小麥粉，包括全麥麵粉，
                 <br />
-                唤醒味蕾美味與幸福同享。
+                具有獨特的黃金比例，最能突出麵團的鮮味。
               </p>
             </div>
           </div>
@@ -66,6 +68,7 @@ const Home = () => {
               <img src="images/79383.jpeg" class="images84774" />
             </div>
             <div class="text-content">
+            <img className="p-3" src="https://j-croissant.jp/wp/wp-content/themes/j-croissant/assets/img/quality/quality_2.svg" alt="" />
               <p className="container">
                 選用當季新鮮水果、堅持使用在地小農種植的天然食材，
                 <br />
@@ -74,6 +77,19 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div class="grid-container">
+            <div class="image-container">
+              <img src="images/photo-79.webp" class="images84774" />
+            </div>
+            <div class="text-content">
+            <img className="p-3" src="https://j-croissant.jp/wp/wp-content/themes/j-croissant/assets/img/quality/quality_3.svg" alt="" />
+              <p className="container">
+              純糖僅由奄美群島的甘蔗原料製成，並緩慢烘烤以形成天然晶體，
+                <br />
+                因此富含礦物質並緊緊鎖住風味。 這是一種溫和的天然甜味。
+              </p>
+            </div>
+          </div>
         <div className=" mt-5  text-center">
           <h4>最新消息</h4>
         </div>
