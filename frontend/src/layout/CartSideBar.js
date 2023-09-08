@@ -38,7 +38,7 @@ const CartSideBar = (props) => {
             ))}
           </ul>
         ) : (
-          <div>目前購物車為空</div>
+          <div className="m-2">目前購物車為空</div>
         )}
 
         {cart.length > 0 && (

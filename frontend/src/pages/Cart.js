@@ -3,6 +3,7 @@ import "../styles/Cart.css";
 
 const Cart = (props) => {
   const { cart, setCart } = props;
+ 
 
   console.log("[購物車]：", cart);
 
@@ -24,13 +25,20 @@ const Cart = (props) => {
     setCart(updatedCart);
   };
 
+
+
   return (
     <div>
       <br />
       <br />
       <br />
       <br />
-
+      <div className="alert text-center" style={{height:"100px"}} role="alert">
+          請選擇商品
+        </div>
+        <div className="alert alert-secondary text-center" role="alert">
+          尚未建立訂單！
+        </div>
       <table className="table">
         <thead>
           <tr>
@@ -89,6 +97,8 @@ const Cart = (props) => {
       <div className="calculateTotal">
         <h5>總計：${calculateTotal()}</h5>
       </div>
+
+
       <hr />
       <div style={{ marginLeft: "20px" }}>
         <h6
