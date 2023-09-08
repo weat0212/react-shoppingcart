@@ -3,7 +3,6 @@ import "../styles/Cards.css";
 import {CenterModal} from "../layout/CenterModal";
 import mockCakes from "../model/mock/Cakes";
 
-
 const MyCards = (props) => {
   const { cart, setCart } = props;
   // 商品
@@ -14,8 +13,6 @@ const MyCards = (props) => {
     }));
   }, []);
 
-  
-
   // 彈跳視窗
   const [modalConfig, setModalConfig] = React.useState({show: false, content: ""});
 
@@ -23,6 +20,7 @@ const MyCards = (props) => {
     setModalConfig({show: true, content: `已將「${product?.name}」加入購物車！`, img: product?.link});
   }
 
+  //更新一個蛋糕陣列中特定蛋糕的數量屬性，並根據事件中的新數量值來進行更新
   function handleQuantityChange(e, index) {
     setCakes(prev => prev.map((cake, i) => {
       if (i === index) {
@@ -34,6 +32,7 @@ const MyCards = (props) => {
     }));
   }
 
+  //在點擊事件中更新一個蛋糕陣列中特定蛋糕的數量屬性，並確保數量不會小於 0。增加或減少蛋糕數量的操作。
   function handleOnClick(e, index, change) {
     e.preventDefault();
     setCakes(prev => prev.map((cake, i) => {
@@ -47,6 +46,8 @@ const MyCards = (props) => {
     }));
   }
 
+  //將產品添加到購物車中，如果購物車中已經存在相同名稱的產品，則會更新現有產品的數量，合併相同產品的效果。
+  //如果購物車中尚未存在相同名稱的產品，則會將新的產品添加到購物車中。
   function handleAddCart(product) {
     showDialog(product);
 
